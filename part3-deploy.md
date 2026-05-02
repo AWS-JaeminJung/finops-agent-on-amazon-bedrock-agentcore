@@ -4,6 +4,7 @@
 
 ### Agent Runtime 설정
 
+![alt text](images/image-6.png)
 AgentCore에 Agent를 배포하려면 런타임 환경을 정의해야 합니다.
 
 #### 런타임 구성 파일 작성
@@ -98,6 +99,8 @@ aws bedrock-agentcore create-agent-runtime \
   --description "AWS FinOps cost analysis agent" \
   --role-arn arn:aws:iam::ACCOUNT_ID:role/finops-agent-role
 ```
+![alt text](images/image-7.png)
+![alt text](images/image-8.png)
 
 #### Step 2: 코드 패키징 및 배포
 
@@ -110,6 +113,7 @@ aws bedrock-agentcore deploy-agent-runtime \
   --agent-runtime-name finops-agent \
   --code-source file://finops-agent.zip
 ```
+![alt text](images/image-9.png)
 
 #### Step 3: 배포 상태 확인
 
@@ -118,7 +122,9 @@ aws bedrock-agentcore deploy-agent-runtime \
 aws bedrock-agentcore get-agent-runtime \
   --agent-runtime-name finops-agent
 ```
-
+![alt text](images/image-10.png)
+![alt text](images/image-11.png)
+![alt text](images/image-12.png)
 배포 상태가 `ACTIVE`가 되면 Agent를 사용할 수 있습니다.
 
 ### 배포된 Agent 테스트
